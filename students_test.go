@@ -88,6 +88,16 @@ func TestPersonLess (t *testing.T) {
 	}
 	t.Logf("Values %v, %v.Answer: %t",people[4],people[5],people.Less(0, 4))
 }
+func TestPeople_Swap(t *testing.T) {
+var people People
+people1:=Person{"Vasiliy","Pupkin",time.Now()}
+people2:=Person{"Arkadiy","Pomidorov",time.Now()}
+people=append(people,people1)
+people=append(people,people2)
+if people.Swap(0,1);people[0]!=people2{
+	t.Errorf("Swap ne pracue!")
+}else {t.Log("People Swap test pass good!")}
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
